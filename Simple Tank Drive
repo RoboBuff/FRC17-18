@@ -1,0 +1,30 @@
+//Tank Drive Train
+package org.usfirst.frc.team4001.robot; //comes strandard in program
+import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+public class Robot extends IterativeRobot {
+import edu.wpi.first.wpilibj.Joystick; //library will apprear when code
+import edu.wpi.first.wpilibj.Victor; // is written
+Victor LeftDrive = new Victor (0); // motors controllers and
+Victor RightDrive = new Victor (1); // Joystick must be stated
+Joystick driverstick = new Joystick(0);
+double LeftStickValue;
+double RightStickValue;
+@Override //comes standard in program
+public void robotInit() {
+}
+@Override
+public void autonomousInit() {
+}
+@Override
+public void autonomousPeriodic() {
+}
+@Override
+public void teleopPeriodic() {
+LeftStickValue = driverstick.getRawAxis(1); //Joystick values put into
+RightStickValue = driverstick.getRawAxis(5); //motor controller
+LeftDrive.set(-LeftStickValue);
+RightDrive.set(RightStickValue);
+} //comes standard in program
+@Override
+public void testPeriodic()
